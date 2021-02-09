@@ -1,0 +1,13 @@
+{
+  "appId": "nl.bobstoute.app-react-ionic",
+  "appName": "app-react-ionic",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "../../dist/apps/app-react-ionic",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

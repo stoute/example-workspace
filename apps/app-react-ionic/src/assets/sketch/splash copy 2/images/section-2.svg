@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="302px" height="212px" viewBox="0 0 302 212" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>section-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="sketch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="splash-copy-2">
+            <g id="section-2">
+                <rect id="action-showInfo" fill="#2D2C2D" opacity="0.096484375" x="0" y="0" width="302" height="212" rx="38"></rect>
+                <text id="app-react-ionic" font-family="OpenSans-Bold, Open Sans" font-size="24" font-weight="bold" fill="#646464" fill-opacity="0.987149004">
+                    <tspan x="61.1054688" y="136.964912">app-react-ionic</tspan>
+                </text>
+                <text id="mobile-app-template" font-family="OpenSans-Bold, Open Sans" font-size="14" font-weight="bold" fill="#4A4A4A">
+                    <tspan x="78.2143555" y="175.162162">mobile app template</tspan>
+                    <tspan x="151" y="194.162162"></tspan>
+                    <tspan x="151" y="213.162162"></tspan>
+                    <tspan x="151" y="232.162162"></tspan>
+                    <tspan x="151" y="251.162162"></tspan>
+                    <tspan x="151" y="270.162162"></tspan>
+                    <tspan x="151" y="289.162162"></tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

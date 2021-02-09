@@ -1,0 +1,51 @@
+{
+  "appId": "app-react-ionic",
+  "appName": "app-react-ionic",
+  "apiUrl": "https://bsmp-workspace.firebaseapp.com/apps/documentation/assets/data/mock",
+  "apiUrlDev": "https://bsmp-workspace.firebaseapp.com/apps/documentation/assets/data/mock",
+  "dev": false,
+  "languages": ["en-US","nl-NL"],
+  "roles": {
+    "TESTER": [
+      {
+        "actions": [
+          "create",
+          "read",
+          "update",
+          "delete",
+          "test",
+          "logout"
+        ],
+        "subject": ["all"]
+      }
+    ]
+  },
+  "menus": {
+    "mainMenu": [],
+    "userMenu": [],
+    "devMenu": [
+      {
+        "title": "Iframe",
+        "href": "/iframe/variations.firebaseapp.com/https"
+      }
+    ]
+  },
+  "translations:app": {
+    "en-US": {
+      "app": {
+        "name": "react-ionic",
+        "description": "template application"
+      },
+      "todo": "Task",
+      "todos": "Tasks"
+    },
+    "nl-Nl": {
+      "app": {
+        "name": "react-ionic",
+        "description": "template applicatie"
+      },
+      "todo": "Taak",
+      "todos": "Taken"
+    }
+  }
+}

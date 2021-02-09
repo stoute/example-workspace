@@ -1,0 +1,9 @@
+{
+  "name": "app-react-ionic",
+  "scripts": {
+
+  },
+  "devDependencies": {
+    "@capacitor/cli": "2.4.2"
+  }
+}

@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './app/theme/variables';
+
+body {
+  background-color: var(--app-background-color, var(--ion-background-color)) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  //color: var(--bsm-primary);
+}
+
+.no-focus-outline a:focus,
+.no-focus-outline button:focus {
+  outline: none;
+}
+
+.container-center {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.full-screen {
+  margin-top: var(--app-navbar-height);
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.no-focus-outline a:focus,
+.no-focus-outline button:focus {
+  outline: none;
+}
+
+.login-form {
+  max-width: 550px;
+}
+.login-btn, logout-btn {
+  //text-align: center;
+  //background-color: var(--ion-background-color);
+  //padding: 30px;
+  //color: var(--bsm-gray-500);
+  //border-radius: 50%;
+}
+
+bsm-loading-spinner {
+  padding-top: 50vh;
+}
+
+bsm-navbar {
+  .logo {
+    max-height: 35px;
+    //margin-top: -4px;
+  }
+  .overlay-menu {
+    li {
+      border-bottom: 1px solid var(--bsm-border-color);
+      padding-bottom: var(--bsm-padding);
+    }
+    a {
+      font-weight: bold;
+      padding: var(--bsm-padding);
+      padding-bottom: var(--bsm-padding / 2);
+    }
+  }
+}
+
+.form-control {
+  background-color: var(--ion-color-step-50) !important;
+  border: var(--bsm-border) !important;
+  color: var(--ion-color-step-600) !important;
+}
+.list-group-item, .modal-content {
+  background-color: var(--ion-background-color) !important;
+  color: var(--ion-text-color) !important;
+}
+
+.dropdown-menu.show {
+  overflow: hidden;
+}
+
+
+// dark mode; bootstrap overrides
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--ion-background-color) !important;
+    --primary: var(--bsm-primary) !important;
+    --secondary: var(--bsm-secondary) !important;
+    a {
+      color: var(--bsm-primary) !important;
+    }
+    //input:-internal-autofill-selected {
+    //  background-color: var(--ion-background-color) !important;
+    //}
+    text-area {
+      //background-color: var(--bsm-background-color) !important;
+    }
+
+  }
+
+}

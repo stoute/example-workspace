@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "projects": {
+    "app-react-ionic": {
+      "root": "apps/app-react-ionic",
+      "sourceRoot": "apps/app-react-ionic/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/app-react-ionic",
+            "index": "apps/app-react-ionic/src/index.html",
+            "main": "apps/app-react-ionic/src/main.tsx",
+            "polyfills": "apps/app-react-ionic/src/polyfills.ts",
+            "tsConfig": "apps/app-react-ionic/tsconfig.app.json",
+            "assets": [
+              "apps/app-react-ionic/src/assets",
+              "apps/app-react-ionic/src/config.json",
+              "apps/app-react-ionic/src/manifest.json",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@bsmp/webcomponents",
+                "output": "/assets/@bsmp/webcomponents"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/regenerator-runtime",
+                "output": "/assets/regenerator-runtime"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ionicons/dist",
+                "output": "/assets/ionicons/dist"
+              }
+            ],
+            "styles": ["apps/app-react-ionic/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nxtend/ionic-react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/app-react-ionic/src/environments/environment.ts",
+                  "with": "apps/app-react-ionic/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "app-react-ionic:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "app-react-ionic:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/app-react-ionic/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/app-react-ionic/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "add": {
+          "builder": "@nxtend/capacitor:command",
+          "options": {
+            "command": "add",
+            "platform": ""
+          },
+          "configurations": {
+            "ios": {
+              "platform": "ios"
+            },
+            "android": {
+              "platform": "android"
+            }
+          }
+        },
+        "copy": {
+          "builder": "@nxtend/capacitor:command",
+          "options": {
+            "command": "copy",
+            "platform": ""
+          },
+          "configurations": {
+            "platform": "android",
+            "ios": {
+              "platform": "ios"
+            },
+            "android": {
+              "platform": "android"
+            }
+          }
+        },
+        "open": {
+          "builder": "@nxtend/capacitor:command",
+          "options": {
+            "command": "open",
+            "platform": ""
+          },
+          "configurations": {
+            "platform": "android",
+            "ios": {
+              "platform": "ios"
+            },
+            "android": {
+              "platform": "android"
+            }
+          }
+        },
+        "sync": {
+          "builder": "@nxtend/capacitor:command",
+          "options": {
+            "command": "sync",
+            "platform": ""
+          },
+          "configurations": {
+            "platform": "android",
+            "ios": {
+              "platform": "ios"
+            },
+            "android": {
+              "platform": "android"
+            }
+          }
+        },
+        "update": {
+          "builder": "@nxtend/capacitor:command",
+          "options": {
+            "command": "update",
+            "platform": ""
+          },
+          "configurations": {
+            "platform": "android",
+            "ios": {
+              "platform": "ios"
+            },
+            "android": {
+              "platform": "android"
+            }
+          }
+        }
+      }
+    },
+    "app-react-ionic-e2e": {
+      "root": "apps/app-react-ionic-e2e",
+      "sourceRoot": "apps/app-react-ionic-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/app-react-ionic-e2e/cypress.json",
+            "tsConfig": "apps/app-react-ionic-e2e/tsconfig.e2e.json",
+            "devServerTarget": "app-react-ionic:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-react-ionic:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/app-react-ionic-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "entities": {
+      "root": "libs/entities",
+      "sourceRoot": "libs/entities/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/entities/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "options": {
+            "outputPath": "dist/libs/entities",
+            "tsConfig": "libs/entities/tsconfig.lib.json",
+            "project": "libs/entities/package.json",
+            "entryFile": "libs/entities/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/entities/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "workspace-lib": {
+      "root": "libs/workspace-lib",
+      "sourceRoot": "libs/workspace-lib/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/workspace-lib/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/workspace-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    },
+    "@nxtend/ionic-react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "app-react-ionic"
+}
